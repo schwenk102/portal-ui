@@ -97,7 +97,8 @@ class Vitessce:
 
         """
 
-        # Can there be more than one of these?  This seems like a fine default for now.
+        # TODO: Handle multiple: https://github.com/hubmapconsortium/portal-ui/issues/528
+        # NOTE: "mapped_data_types" also exists, but doesn't seem appropriate here.
         self.assay_type = entity["data_types"][0]
         self.uuid = entity["uuid"]
         self.nexus_token = nexus_token

@@ -98,7 +98,7 @@ function BarChart(props) {
         body: JSON.stringify({
           size: 0,
           aggs: {
-            data_types: { terms: { field: 'data_types.keyword' } },
+            mapped_data_types: { terms: { field: 'mapped_data_types.keyword' } },
           },
         }),
         headers: {
@@ -110,7 +110,7 @@ function BarChart(props) {
         return;
       }
       const data = await response.json();
-      const { buckets } = data.aggregations.data_types;
+      const { buckets } = data.aggregations.mapped_data_types;
 
       if (buckets.length > 0) {
         setAssayTypesData(buckets);

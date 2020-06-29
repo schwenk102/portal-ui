@@ -21,13 +21,14 @@ function AssaySpecificItem(props) {
 }
 
 function SummaryData(props) {
-  const { data_types, origin_sample } = props;
-  const data_types_string = data_types.constructor.name === 'Array' ? data_types.join(' / ') : data_types;
+  const { mapped_data_types, origin_sample } = props;
+  // NOTE: At some point we can assume the format is consistent.
+  const mapped_data_types_string = mapped_data_types.constructor.name === 'Array' ? mapped_data_types.join(' / ') : mapped_data_types;
   return (
     <>
-      {data_types && data_types.length > 0 && (
+      {mapped_data_types && mapped_data_types.length > 0 && (
         <AssaySpecificItem>
-          <a href={`/docs/assays#${data_types_string}`}>{data_types_string}</a>
+          <a href={`/docs/assays#${mapped_data_types_string}`}>{mapped_data_types_string}</a>
         </AssaySpecificItem>
       )}
       <Typography variant="body1">{origin_sample.mapped_organ}</Typography>
@@ -43,7 +44,7 @@ function DatasetDetail(props) {
     metadata,
     files,
     uuid,
-    data_types,
+    mapped_data_types,
     origin_sample,
     group_name,
     created_by_user_displayname,
@@ -73,7 +74,7 @@ function DatasetDetail(props) {
         description={description}
         status={status}
       >
-        <SummaryData data_types={data_types} origin_sample={origin_sample} />
+        <SummaryData mapped_data_types={mapped_data_types} origin_sample={origin_sample} />
       </Summary>
       {shouldDisplaySection.visualization && <Visualization vitData={vitData} />}
       <Attribution

@@ -1,13 +1,13 @@
 from .vitessce import Vitessce
 
 TEST_ENTITY_CODEX = {
-    "data_types": ["codex_cytokit"],
+    "mapped_data_types": ["codex_cytokit"],
     "uuid": "uuid",
     "files": [{"rel_path": "codex/path/codex.ome.tiff"}, ],
 }
 
 TEST_ENTITY_RNASEQ = {
-    "data_types": ["salmon_rnaseq_10x"],
+    "mapped_data_types": ["salmon_rnaseq_10x"],
     "uuid": "uuid",
     "files": [
         {"rel_path": "cluster-marker-genes/output/cluster_marker_genes.cells.json"},
@@ -16,7 +16,7 @@ TEST_ENTITY_RNASEQ = {
 }
 
 TEST_ENTITY_RNASEQ_EMPTY = {
-    "data_types": ["salmon_rnaseq_10x"],
+    "mapped_data_types": ["salmon_rnaseq_10x"],
     "uuid": "uuid",
     "files": [
         {"rel_path": "bad/output/cluster_marker_genes.cells.json"},

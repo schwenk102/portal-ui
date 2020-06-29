@@ -122,7 +122,7 @@ class ApiClient():
         return entity
 
     def get_vitessce_conf(self, entity):
-        if ('files' not in entity or 'data_types' not in entity):
+        if ('files' not in entity or 'mapped_data_types' not in entity):
             # Would a default no-viz config be better?
             return {}
         if self.is_mock:
