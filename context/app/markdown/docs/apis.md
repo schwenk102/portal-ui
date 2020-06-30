@@ -26,7 +26,7 @@ extensive cross-referencing across biomedical vocabulary systems.
 ### Entity API
 The Entity API returns information about HuBMAP data entities (Figure 3). 
 
-Examples of Entity endpoints are as follows:
+Examples of Entity endpoints are as follows:s
  - /entities/types: return valid entity types
  - /entities/{identifer}: return specific entities
  - /entities/types/{type_code}: return UUIDs by entity type
